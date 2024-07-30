@@ -1,35 +1,25 @@
 {
-  "name": "tbyc-astro-payload",
-  "type": "module",
-  "version": "0.0.1",
+  "private": true,
   "scripts": {
     "prepare": "husky",
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "playwright": "playwright",
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "e2e": "turbo e2e",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check ."
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.8.3",
-    "astro": "^4.12.2",
-    "typescript": "^5.5.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
-    "@playwright/test": "^1.45.3",
-    "@types/node": "^22.0.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^9.1.4",
+    "husky": "^9.1.2",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-css-order": "^2.1.2"
-  }
+    "prettier-plugin-css-order": "^2.1.2",
+    "turbo": "^2.0.9"
+  },
+  "packageManager": "pnpm@9.6.0",
+  "name": "tbyc-astro-payload"
 }

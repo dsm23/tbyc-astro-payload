@@ -3,6 +3,9 @@ dist/
 # generated types
 .astro/
 
+# cache
+.cache
+
 # dependencies
 node_modules/
 
@@ -25,8 +28,11 @@ pnpm-debug.log*
 .vscode/settings.json
 .idea/
 
+# turbo
+.turbo
+
 # playwright
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

@@ -43,6 +43,6 @@ jobs:
       # - name: Unit tests and coverage
       #   run: pnpm run coverage
       - name: build check
-        run: pnpm run build
+        run: pnpm run build --filter=[origin/main]
         # env:
         #   PUBLIC_URL: ${{ vars.PUBLIC_URL }}
