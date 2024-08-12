@@ -16,6 +16,8 @@ jobs:
       matrix:
         shardIndex: [1, 2, 3, 4, 5, 6]
         shardTotal: [6]
+    container:
+      image: mcr.microsoft.com/playwright:v1.46.0-jammy
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@v2
@@ -35,11 +37,10 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-      - name: Install Playwright Browsers
-        run: pnpm dlx playwright install --with-deps
       - name: Run Playwright tests
         run: pnpm e2e -- --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
-        # env:
+        env:
+          HOME: /root
         #   PUBLIC_URL: ${{ vars.PUBLIC_URL }}
       - name: Upload blob report to GitHub Actions Artifacts
         if: ${{ !cancelled() }}
